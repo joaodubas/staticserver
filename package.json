@@ -1,0 +1,19 @@
+{
+  "name": "staticserver",
+  "version": "0.0.1",
+  "description": "Sample static server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "meetup"
+  ],
+  "author": "Joao Paulo Dubas <joao.dubas@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-static": "~0.7.3"
+  }
+}

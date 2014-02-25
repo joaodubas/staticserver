@@ -1,0 +1,102 @@
+/**
+ * --- Base -------------------------------------------------------------------
+ */
+  html, body {
+    margin: 0; padding: 0;
+  }
+  html {
+    font-family: Verdana, Tahoma, Arial, sans-serif;
+    font-size: 16px; line-height: 1.25; /* 20 / 16 */
+  }
+  body {
+    font-size: 1em;
+  }
+
+/**
+ * --- Helper -----------------------------------------------------------------
+ */
+  .clearfix:before,
+  .clearfix:after {
+      content: ' ';
+      display: table;
+  }
+  .clearfix:after {
+    clear: both;
+  }
+  .clearfix {
+    *zoom: 1;
+  }
+
+  .debug div, .debug ul, .debug li {
+    outline: 1px solid #000;
+  }
+/* --- Helper -------------------------------------------------------------- */
+
+/**
+ * --- Widget -----------------------------------------------------------------
+ */
+  .widget-container {
+    counter-reset: fig-item;
+    margin: 0 auto;
+    width: 600px;
+  }
+    .widget-view {
+      overflow: hidden;
+      position: relative;
+      width: 600px; height: 300px;
+    }
+      .widget-roller, .widget-item {
+        margin: 0; padding: 0;
+        list-style: none;
+      }
+      .widget-roller {
+        margin: 0;
+        position: absolute; left: 0; top: 0;
+        width: auto; height: 300px;
+        -webkit-transition: left 0.25s;
+        -moz-transition: left 0.25s;
+        -ms-transition: left 0.25s;
+        -o-transition: left 0.25s;
+        transition: left 0.25s;
+      }
+        .widget-item {
+          float: left;
+        }
+          .fig {
+            width: 150px; height: 150px;
+            position: relative; top: 0; left: 0;
+          }
+            .fig > img {
+              width: 150px;
+            }
+          .fig-highlight {
+            width: 300px; height: 300px;
+          }
+            .fig-highlight > img {
+              width: 300px;
+            }
+          .fig:after {
+            counter-increment: fig-item;
+            content: counter(fig-item);
+            border: 1px solid #000;
+            font-size: 3em;
+            text-align: center; line-height: 150px;
+            text-shadow: 1px 1px #dadada;
+            display: block;
+            width: auto; height: auto;
+            position: absolute; top: 5px; right: 5px; bottom: 5px; left: 5px;
+          }
+          .fig-highlight:after {
+            line-height: 300px;
+          }
+          .widget-item:nth-child(odd) .fig:after {
+            background: rgba(125, 125, 125, 0.5);
+          }
+          .widget-item:nth-child(even) .fig:after {
+            background: rgba(75, 75, 75, 0.5);
+          }
+    .widget-controller {
+      margin: 0 auto;
+      width: 600px;
+    }
+/* --- Widget -------------------------------------------------------------- */
